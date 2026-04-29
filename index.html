@@ -568,41 +568,115 @@
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 244, 239, 0.9));
     }
 
+    .pressure-section {
+      background: linear-gradient(180deg, rgba(247, 236, 233, 0.86), rgba(255, 255, 255, 0.96));
+    }
+
+    .pressure-grid,
+    .package-grid,
+    .benefit-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .pressure-grid,
+    .package-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .benefit-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .pressure-card,
+    .package-card,
+    .benefit-card {
+      padding: 24px 22px;
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    .pressure-card.highlight,
+    .package-card.highlight {
+      background: linear-gradient(180deg, rgba(237, 241, 234, 0.96), rgba(255, 255, 255, 0.94));
+    }
+
+    .pressure-card h3,
+    .package-card h3,
+    .benefit-card h3 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 22px;
+      line-height: 1.18;
+      color: var(--ink);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
     .lever-card p,
     .phase-card p,
     .findaible-copy p,
-    .price-meta {
+    .price-meta,
+    .pressure-card p,
+    .package-card p,
+    .benefit-card p {
       color: var(--muted);
       font-size: 15px;
     }
 
-    .phase-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      align-items: stretch;
+    .transition-copy {
+      max-width: 70ch;
     }
 
-    .phase-card {
+    .table-wrap {
+      margin-top: 24px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      padding: 14px 16px;
+      text-align: left;
+      background: var(--ink);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      vertical-align: top;
+    }
+
+    tbody td {
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      color: var(--text);
+      line-height: 1.72;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: rgba(245, 247, 241, 0.8);
+    }
+
+    .risk-table-cards {
+      display: none;
+    }
+
+    .findaible-layout,
+    .sprint-layout,
+    .cta-actions {
       display: grid;
-      gap: 14px;
-      position: relative;
-      min-height: 290px;
-      align-content: start;
-    }
-
-    .step-index {
-      color: rgba(132, 47, 39, 0.78);
-      font-family: "Source Serif 4", Georgia, serif;
-      font-size: 38px;
-      line-height: 0.92;
-      letter-spacing: -0.025em;
-      font-weight: 500;
+      gap: 24px;
     }
 
     .findaible-layout,
     .sprint-layout {
-      display: grid;
       grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.82fr);
-      gap: 24px;
       align-items: start;
     }
 
@@ -753,6 +827,13 @@
       margin-top: 16px;
     }
 
+    .cta-actions {
+      grid-template-columns: repeat(2, minmax(0, auto));
+      justify-content: start;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
     .closing-card {
       display: grid;
       gap: 16px;
@@ -798,12 +879,17 @@
       }
 
       .score-grid,
-      .phase-grid {
+      .pressure-grid,
+      .package-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .prompt-grid {
         grid-template-columns: 1fr;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .state-grid {
@@ -829,13 +915,51 @@
       .anchor-nav ol,
       .score-grid,
       .lever-grid,
-      .phase-grid {
+      .pressure-grid,
+      .package-grid,
+      .benefit-grid,
+      .cta-actions {
         grid-template-columns: 1fr;
+      }
+
+      .cta-actions {
+        justify-content: stretch;
       }
 
       .footer-card {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      thead {
+        display: none;
+      }
+
+      table,
+      tbody,
+      tr,
+      td {
+        display: block;
+        width: 100%;
+      }
+
+      tbody tr {
+        border-bottom: 1px solid var(--line);
+      }
+
+      tbody td {
+        padding: 12px 16px 14px;
+      }
+
+      tbody td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
       }
     }
 
@@ -949,19 +1073,19 @@
           <li>
             <a href="#prozess">
               <strong>2</strong>
-              <span>Vom Befund zur Optimierung</span>
+              <span>Wettbewerb und Risiko</span>
             </a>
           </li>
           <li>
             <a href="#findaible">
               <strong>3</strong>
-              <span>findAIble als Messlogik</span>
+              <span>Signallücken und Startpaket</span>
             </a>
           </li>
           <li>
             <a href="#kontakt">
               <strong>4</strong>
-              <span>3-Stunden-Sprint und Anfrage</span>
+              <span>Nutzen und Termin</span>
             </a>
           </li>
         </ol>
@@ -1112,137 +1236,152 @@
         </div>
       </section>
 
-      <section class="section reveal" id="prozess">
+      <section class="section pressure-section reveal" id="prozess">
         <div class="section-head">
-          <div class="section-kicker">Vom Befund zur Optimierung</div>
-          <h2>Vier Phasen von der Baseline zur messbaren Verbesserung.</h2>
-          <p>Der Report beschreibt den Zustand. Wert entsteht erst dann, wenn für konkrete Produktgruppen systematisch gemessen, priorisiert, optimiert und erneut verglichen wird.</p>
+          <div class="section-kicker">Wettbewerbsdruck</div>
+          <h2>Wenn TRIGEMA die KI-Antwort nicht besetzt, tun es andere.</h2>
+          <p>Generative Suche funktioniert nicht wie klassische Trefferlisten. Bei vielen Fragen wird nicht mehr zehnmal geklickt, sondern eine direkte Antwort erwartet. Genau dort entscheidet sich, ob TRIGEMA als konkrete Empfehlung erscheint oder ob Wettbewerber die Antwortlogik besetzen.</p>
         </div>
 
-        <div class="phase-grid">
-          <article class="phase-card">
-            <div class="step-index">01</div>
-            <h3>Baseline messen</h3>
-            <p>Die wichtigsten zehn Produkte oder Produktkategorien auswählen, relevante Prompts definieren und mehrere Runs vorbereiten, damit aus ersten Beobachtungen eine belastbare Ausgangslage wird.</p>
+        <div class="pressure-grid">
+          <article class="pressure-card">
+            <h3>hessnatur</h3>
+            <p>Relevant im Nachhaltigkeitsumfeld und bei produktbezogenen Vertrauenssignalen.</p>
           </article>
-          <article class="phase-card">
-            <div class="step-index">02</div>
-            <h3>Sichtbarkeit analysieren</h3>
-            <p>Nennungen, Quellen, Wettbewerber, Argumente, Sentiment und fehlende Belege auswerten. So wird sichtbar, wo TRIGEMA heute schon trägt und wo Antworten noch zu allgemein bleiben.</p>
+          <article class="pressure-card">
+            <h3>Schiesser</h3>
+            <p>Starke Kategorie- und Traditionsnähe bei Basics, Wäsche und deutscher Textilhistorie.</p>
           </article>
-          <article class="phase-card">
-            <div class="step-index">03</div>
-            <h3>Daten und Content optimieren</h3>
-            <p>Produktseiten, strukturierte Daten, FAQ-Elemente, Zertifikate, Services und Standortdaten gezielt verbessern. Nicht breit, sondern dort, wo die gemessenen Fragen den größten Hebel zeigen.</p>
+          <article class="pressure-card">
+            <h3>Engelbert Strauss</h3>
+            <p>Stark bei Nutzwert, Arbeitskleidung, B2B-Nähe und robusten Produktversprechen.</p>
           </article>
-          <article class="phase-card">
-            <div class="step-index">04</div>
-            <h3>Re-Run und Wirkung prüfen</h3>
-            <p>Dieselben Prompts erneut laufen lassen, Veränderungen messen und daraus die nächste Optimierungsrunde ableiten. So entsteht aus Vermutung eine belastbare Entscheidungslogik.</p>
+          <article class="pressure-card highlight">
+            <h3>TRIGEMA-Potenzial</h3>
+            <p>Made in Germany, eigene Produktion, 44 Filialen, Shirt-Designer, Zertifikate, Historie und starke Marke. Entscheidend ist, diese Signale strukturiert und produktbezogen für KI-Systeme verwertbar zu machen.</p>
           </article>
         </div>
       </section>
 
       <section class="section reveal" id="findaible">
         <div class="section-head">
-          <div class="section-kicker">Messlogik</div>
-          <h2>Der eigentliche Mehrwert entsteht dann, wenn Produkt-Prompts systematisch ausgespielt und die Antworten vergleichbar gemacht werden.</h2>
+          <div class="section-kicker">Signallücken</div>
+          <h2>Wo heute KI-Signale fehlen oder zu schwach strukturiert sind.</h2>
+          <p>Die Erstdiagnose zeigt strukturelle Potenziale. Der nächste Schritt ist die produktbezogene Messung: Bei welchen konkreten KI-Fragen erscheint TRIGEMA, welche Wettbewerber werden genannt und welche Quellen nutzt die KI?</p>
         </div>
 
-        <div class="findaible-layout">
-          <div class="findaible-copy">
-            <p>Für einen Kunden wie TRIGEMA bleibt allgemeine Optimierung zu nah an der Oberfläche. Wirklich aussagekräftig wird die Arbeit erst über ein Set aus konkreten Produkt- und Entscheidungsfragen, die über mehrere Runs beobachtet werden.</p>
-            <ul>
-              <li>Welche Produkte oder Kategorien erscheinen bei spezifischen Kauf- und Vergleichsfragen bereits sichtbar in generativen Antworten?</li>
-              <li>Welche Wettbewerber werden genannt, welche Quellen bevorzugen die Systeme und welche Vertrauensargumente ziehen sie heran?</li>
-              <li>Wo fehlen strukturierte Belege, damit aus einer Markenwahrnehmung eine konkrete Produkt- oder Standortantwort wird?</li>
-            </ul>
-
-            <div class="tool-preview">
-              <div class="note-label">Abstrahierte Scorecard-Logik</div>
-              <strong>So wird aus Einzelbeobachtung ein messbarer Produktblick.</strong>
-              <p>Für ein Executive-Briefing ist nicht der komplette Tool-Report entscheidend, sondern die Logik dahinter: Produktgruppe, Prompt-Set, Nennung, Quellenbild und Wettbewerbsabstand werden in eine vergleichbare Sicht überführt.</p>
-              <div class="tool-ui" aria-hidden="true">
-                <div class="tool-topline">
-                  <div class="tool-pill"></div>
-                  <div class="tool-stat"></div>
-                  <div class="tool-stat"></div>
-                </div>
-                <div class="tool-chart">
-                  <div class="tool-bar"><span style="height: 68%;"></span></div>
-                  <div class="tool-bar"><span style="height: 44%;"></span></div>
-                  <div class="tool-bar"><span style="height: 81%;"></span></div>
-                </div>
-                <div class="tool-table-row">
-                  <div class="tool-label"></div>
-                  <div class="tool-line"></div>
-                  <div class="tool-line"></div>
-                  <div class="tool-line"></div>
-                </div>
-                <div class="tool-table-row">
-                  <div class="tool-label"></div>
-                  <div class="tool-line"></div>
-                  <div class="tool-line"></div>
-                  <div class="tool-line"></div>
-                </div>
-                <div class="tool-table-row">
-                  <div class="tool-label"></div>
-                  <div class="tool-line"></div>
-                  <div class="tool-line"></div>
-                  <div class="tool-line"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <aside class="findaible-box">
-            <div class="note-label">Warum das für TRIGEMA relevant ist</div>
-            <strong>Was jetzt fehlt, ist kein weiterer Befund, sondern ein belastbares Messsystem für die wichtigsten Produkte.</strong>
-            <p>Genau hier entsteht der Unterschied zwischen einer guten Erstdiagnose und einer belastbaren Entscheidungsgrundlage: Nicht nur wissen, was fehlt, sondern für die relevantesten Produktgruppen messen, wie KI heute tatsächlich antwortet.</p>
-          </aside>
+        <div class="table-wrap">
+          <table aria-label="Produktbezogene Signallücken">
+            <thead>
+              <tr>
+                <th>Entscheidungsfrage</th>
+                <th>Aktueller Befund</th>
+                <th>Risiko</th>
+                <th>Optimierungshebel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Entscheidungsfrage">„Welches T-Shirt ist 100 Prozent Made in Germany?“</td>
+                <td data-label="Aktueller Befund">Kein belastbares Produkt-Signal</td>
+                <td data-label="Risiko">TRIGEMA bleibt allgemeine Marke statt konkrete Produktempfehlung</td>
+                <td data-label="Optimierungshebel">Product-Schema, Herkunft, Material, Produktbelege</td>
+              </tr>
+              <tr>
+                <td data-label="Entscheidungsfrage">„Welches OEKO-TEX Poloshirt kommt aus deutscher Produktion?“</td>
+                <td data-label="Aktueller Befund">Zertifikats-Signal nicht ausreichend verbunden</td>
+                <td data-label="Risiko">Nachhaltigkeitsargument wird nicht sauber produktbezogen ausgespielt</td>
+                <td data-label="Optimierungshebel">Zertifikate, hasCredential, Product-Daten</td>
+              </tr>
+              <tr>
+                <td data-label="Entscheidungsfrage">„Wo finde ich eine TRIGEMA-Filiale in meiner Nähe?“</td>
+                <td data-label="Aktueller Befund">Standort-Signal schwach strukturiert</td>
+                <td data-label="Risiko">KI verweist nur allgemein oder nutzt andere Quellen</td>
+                <td data-label="Optimierungshebel">44x LocalBusiness / ClothingStore</td>
+              </tr>
+              <tr>
+                <td data-label="Entscheidungsfrage">„Welche Marke bietet individualisierbare Shirts Made in Germany?“</td>
+                <td data-label="Aktueller Befund">Service-Signal fehlt</td>
+                <td data-label="Risiko">Der Shirt-Designer wird nicht als Antwortvorteil genutzt</td>
+                <td data-label="Optimierungshebel">Service-Schema, FAQ, Produkt- und Service-Verknüpfung</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
       <section class="section reveal" id="sprint">
+        <div class="section-head transition-copy">
+          <div class="section-kicker">Übergang</div>
+          <h2>Der Report zeigt den Zustand. Das Startpaket zeigt den Weg aus dem Zustand.</h2>
+          <p>Eine GEO-Erstdiagnose ist nur der Anfang. Entscheidend wird die Frage, bei welchen konkreten Kauf-, Vergleichs-, Nachhaltigkeits-, Standort- und Servicefragen TRIGEMA heute tatsächlich erscheint, welche Wettbewerber genannt werden und welche Quellen KI-Systeme verwenden. Erst daraus entsteht eine belastbare Optimierungs-Roadmap.</p>
+        </div>
+      </section>
+
+      <section class="section reveal">
         <div class="section-head">
-          <div class="section-kicker">Konkreter nächster Schritt</div>
-          <h2>Vorschlag: 3-Stunden-GEO-Product-Visibility-Sprint</h2>
-          <p>In einem kompakten Arbeitsblock wird die Grundlage für messbare GEO-Optimierung vorbereitet. Nicht als Vollprojekt, sondern als sauberer Einstieg in die produktbezogene Sichtbarkeit.</p>
+          <div class="section-kicker">Startpaket</div>
+          <h2>Startpaket: GEO Product Visibility für TRIGEMA</h2>
+          <p>Ein kompaktes Einstiegspaket, um aus der Erstdiagnose ein messbares Arbeitsmodell zu machen.</p>
         </div>
 
-        <div class="sprint-layout">
-          <div>
-            <ul class="sprint-points">
-              <li>Auswahl der wichtigsten zehn Produkte oder Produktkategorien als erstes Messfeld.</li>
-              <li>Entwicklung einer Prompt-Systematik inklusive Baseline-Runs und klarer Messwerte für Nennung, Quellenbild und Wettbewerber.</li>
-              <li>Ableitung einer priorisierten Optimierungs-Roadmap für Produktdaten, strukturierte Signale und Inhalte.</li>
-            </ul>
+        <div class="package-grid">
+          <article class="package-card">
+            <h3>Produkt- und Prompt-Setup</h3>
+            <p>Auswahl von 10 relevanten Produkten oder Produktkategorien. Aufbau einer Prompt-Systematik für Kauf-, Vergleichs-, Nachhaltigkeits-, Standort- und Servicefragen.</p>
+          </article>
+          <article class="package-card">
+            <h3>Baseline-Runs und Wettbewerbsbild</h3>
+            <p>Mehrere Abfragen über relevante generative Systeme. Auswertung von Nennung, Quellen, Wettbewerbern, Argumenten und fehlenden Signalen.</p>
+          </article>
+          <article class="package-card">
+            <h3>GEO-Roadmap und Umsetzungsplan</h3>
+            <p>Priorisierung der Maßnahmen: strukturierte Daten, Produktseiten, FAQ-Logik, Zertifikate, Filialdaten, Service-Signale und Content-Erweiterungen.</p>
+          </article>
+          <article class="package-card highlight">
+            <h3>Ergebnis</h3>
+            <p>Eine GEO-Scorecard für die wichtigsten TRIGEMA-Produkte plus ein priorisierter Maßnahmenplan für die ersten 30 bis 90 Tage.</p>
+          </article>
+        </div>
+      </section>
 
-            <div class="result-box">
-              <div class="note-label">Ergebnis</div>
-              <strong>Eine belastbare GEO-Scorecard für die wichtigsten TRIGEMA-Produkte und ein konkreter Maßnahmenplan für die nächsten Optimierungsschritte.</strong>
-              <p>Damit wird aus der Erstdiagnose ein Arbeitsmodell, an dem sich ein größeres Mandat fachlich und prioritär sauber aufhängen lässt.</p>
-            </div>
-          </div>
+      <section class="section reveal">
+        <div class="section-head">
+          <div class="section-kicker">Konkreter Nutzen</div>
+          <h2>Was nach dem Startpaket vorliegt.</h2>
+        </div>
 
-          <aside class="price-box">
-            <div class="metric-label">Einordnung</div>
-            <span class="price-number">3 Stunden</span>
-            <p class="price-meta">Kompakter Arbeitsblock zur Produkt-Prompt-Logik, Baseline-Vorbereitung und Priorisierung der sichtbarsten GEO-Hebel.</p>
-            <div class="score-gap" style="margin-top: 18px;">
-              <strong>Nicht noch ein Dokument. Sondern der erste messbare Schritt in Richtung Produkt-Visibility.</strong>
-              <p>Die vorliegende Analyse bleibt wertvoll als Statusbild. Der Sprint macht daraus eine operative Entscheidungsgrundlage.</p>
-            </div>
-          </aside>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <h3>Produktbezogene Sichtbarkeit</h3>
+            <p>Welche Produktgruppen heute schon in KI-Antworten erscheinen und welche nicht.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Wettbewerbsabstand</h3>
+            <p>Welche Marken bei relevanten Prompts genannt werden und warum.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Quellenbild</h3>
+            <p>Welche Seiten, Daten und Drittquellen generative Systeme aktuell nutzen.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Priorisierte Maßnahmen</h3>
+            <p>Welche Optimierungen zuerst Wirkung entfalten können.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Umsetzungsfähiger Fahrplan</h3>
+            <p>Was technisch, redaktionell und strukturell in den ersten Wochen zu tun ist.</p>
+          </article>
         </div>
       </section>
 
       <section class="closing-card reveal" id="kontakt">
         <div class="section-kicker">Abschluss</div>
-        <h3>Aus der Erstdiagnose wird ein messbares GEO-System.</h3>
-        <p>Die vorliegende Analyse zeigt den Status quo. Der nächste Schritt ist entscheidend: sichtbar machen, bei welchen konkreten Kauf- und Entscheidungsfragen TRIGEMA heute in KI-Antworten erscheint und wo Optimierung den größten Effekt haben kann.</p>
-        <div class="cta-row">
-          <a class="button" href="mailto:anton.klees@active-value.de?subject=Terminvereinbarung%20TRIGEMA%20GEO%20Sprint">Termin mit Anton Klees vereinbaren</a>
+        <h3>Lassen Sie uns die Erstdiagnose in ein konkretes GEO-Startpaket übersetzen.</h3>
+        <p>In einem gemeinsamen Termin zeigen wir, welche Detaildaten bereits aus der Analyse ableitbar sind, welche Prompt-Runs als nächstes sinnvoll sind und wie ein Startpaket für TRIGEMA aufgebaut werden kann.</p>
+        <div class="cta-actions">
+          <a class="button" href="mailto:anton.klees@active-value.de?subject=GEO-Termin%20abstimmen%20TRIGEMA">GEO-Termin abstimmen</a>
+          <a class="button button-secondary" href="mailto:anton.klees@active-value.de?subject=Startpaket%20besprechen%20TRIGEMA">Startpaket besprechen</a>
         </div>
 
         <p class="report-note">Die vollständige Erstdiagnose liegt als Arbeitsgrundlage vor. Diese Seite verdichtet die wichtigsten Erkenntnisse und übersetzt sie in einen konkreten nächsten Schritt.</p>
