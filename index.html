@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIGEMA GEO Opportunity Briefing | active value</title>
+  <meta
+    name="description"
+    content="Kuratiertes GEO Opportunity Briefing fuer TRIGEMA mit zentralen Erkenntnissen aus der Erstdiagnose und einem konkreten naechsten Schritt fuer produktbezogene Sichtbarkeitsmessung."
+  >
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4f2ee;
+      --surface: rgba(255, 255, 255, 0.96);
+      --surface-soft: #faf8f4;
+      --surface-strong: #ffffff;
+      --ink: #171717;
+      --text: #313131;
+      --muted: #676767;
+      --line: rgba(23, 23, 23, 0.1);
+      --line-strong: rgba(23, 23, 23, 0.18);
+      --green-soft: #edf1ea;
+      --red-soft: #f7ece9;
+      --red: #ab493d;
+      --red-dark: #842f27;
+      --accent: #6e7d63;
+      --shadow: 0 20px 50px rgba(16, 18, 15, 0.05);
+      --max-width: 1140px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(171, 73, 61, 0.08), transparent 30%),
+        linear-gradient(180deg, #f7f5f1 0%, var(--paper) 35%, #f6f4ef 100%);
+      line-height: 1.78;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+      background: rgba(244, 242, 238, 0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 0;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-lockup img {
+      width: 118px;
+      height: auto;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 4px;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .tag,
+    .step-index,
+    .metric-label,
+    .note-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .metric-label,
+    .note-label {
+      color: var(--accent);
+    }
+
+    .brand-copy strong,
+    h1,
+    h2,
+    h3,
+    .quote,
+    .metric-value,
+    .score-gap strong,
+    .price-number,
+    .result-box strong {
+      font-family: "Source Serif 4", Georgia, serif;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-copy strong {
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .header-nav a {
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 180ms ease, color 180ms ease;
+    }
+
+    .header-nav a:hover,
+    .header-nav a:focus-visible {
+      color: var(--ink);
+      border-color: rgba(23, 23, 23, 0.3);
+      outline: none;
+    }
+
+    main {
+      padding: 34px 0 82px;
+    }
+
+    .hero {
+      padding: 16px 0 34px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.78fr);
+      gap: 34px;
+      padding: 44px 42px 42px;
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto auto;
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(171, 73, 61, 0.04), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-copy,
+    .hero-aside {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 5.5vw, 72px);
+      line-height: 0.98;
+      max-width: 13ch;
+      margin: 10px 0 20px;
+    }
+
+    .hero-intro {
+      max-width: 62ch;
+      font-size: 17px;
+      color: var(--text);
+    }
+
+    .hero-intro p + p {
+      margin-top: 14px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .hero-aside {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .aside-card,
+    .section,
+    .score-card,
+    .prompt-card,
+    .lever-card,
+    .phase-card,
+    .result-box,
+    .findaible-box,
+    .footer-card,
+    .closing-card {
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      background: var(--surface);
+    }
+
+    .aside-card {
+      padding: 22px 22px 20px;
+    }
+
+    .aside-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 27px;
+      line-height: 1.08;
+      color: var(--ink);
+    }
+
+    .aside-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .aside-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .aside-list li {
+      list-style: none;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .aside-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(132, 47, 39, 0.75);
+    }
+
+    .anchor-nav {
+      margin: 0 0 28px;
+      padding: 14px 0 0;
+      border-top: 1px solid rgba(23, 23, 23, 0.08);
+    }
+
+    .anchor-nav ol {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      list-style: none;
+    }
+
+    .anchor-nav a {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      min-height: 62px;
+      padding: 16px 18px;
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      background: rgba(255, 255, 255, 0.72);
+      transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
+    }
+
+    .anchor-nav a:hover,
+    .anchor-nav a:focus-visible {
+      border-color: rgba(132, 47, 39, 0.4);
+      background: rgba(255, 255, 255, 0.92);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .anchor-nav strong {
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .anchor-nav span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .section {
+      padding: 38px;
+      margin-top: 24px;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 28px;
+      max-width: 72ch;
+    }
+
+    .section-head h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.03;
+      text-wrap: balance;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 64ch;
+    }
+
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .score-card {
+      padding: 22px 20px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .metric-value {
+      font-size: 46px;
+      line-height: 0.95;
+    }
+
+    .metric-scale {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .metric-bar {
+      position: relative;
+      flex: 1;
+      height: 10px;
+      background: rgba(23, 23, 23, 0.08);
+      overflow: hidden;
+    }
+
+    .metric-bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(132, 47, 39, 0.9), rgba(110, 125, 99, 0.82));
+    }
+
+    .metric-scale small {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .score-gap {
+      margin-top: 20px;
+      padding: 20px 22px;
+      border-left: 3px solid rgba(132, 47, 39, 0.7);
+      background: linear-gradient(90deg, rgba(247, 236, 233, 0.85), rgba(247, 236, 233, 0));
+    }
+
+    .score-gap strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1.06;
+      margin-bottom: 6px;
+    }
+
+    .quote {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.06;
+      max-width: 18ch;
+    }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .evidence-item {
+      padding: 16px 18px;
+      background: var(--surface-soft);
+      border-left: 2px solid rgba(110, 125, 99, 0.75);
+      color: var(--muted);
+    }
+
+    .evidence-item strong {
+      color: var(--ink);
+    }
+
+    .prompt-grid,
+    .lever-grid,
+    .phase-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .prompt-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .prompt-card,
+    .lever-card,
+    .phase-card {
+      padding: 22px;
+    }
+
+    .prompt-card h3,
+    .lever-card h3,
+    .phase-card h3,
+    .closing-card h3,
+    .result-box strong,
+    .findaible-box strong {
+      font-size: 29px;
+      line-height: 1.08;
+      margin-bottom: 12px;
+    }
+
+    .prompt-text {
+      padding: 14px 16px;
+      background: rgba(23, 23, 23, 0.03);
+      color: var(--ink);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .state {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .state label {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .state p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .state.optimized {
+      padding-top: 14px;
+      border-top: 1px solid rgba(23, 23, 23, 0.08);
+    }
+
+    .lever-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lever-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 244, 239, 0.9));
+    }
+
+    .lever-card p,
+    .phase-card p,
+    .findaible-copy p,
+    .price-meta {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .phase-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .phase-card {
+      display: grid;
+      gap: 16px;
+      position: relative;
+      min-height: 260px;
+    }
+
+    .step-index {
+      color: rgba(132, 47, 39, 0.78);
+    }
+
+    .phase-card::after {
+      content: "";
+      position: absolute;
+      top: 34px;
+      right: -8px;
+      width: 16px;
+      height: 1px;
+      background: rgba(23, 23, 23, 0.18);
+    }
+
+    .phase-card:last-child::after {
+      display: none;
+    }
+
+    .findaible-layout,
+    .sprint-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.82fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .findaible-copy ul,
+    .sprint-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .findaible-copy li,
+    .sprint-points li {
+      list-style: none;
+      position: relative;
+      padding-left: 16px;
+      color: var(--muted);
+    }
+
+    .findaible-copy li::before,
+    .sprint-points li::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(132, 47, 39, 0.72);
+    }
+
+    .findaible-box,
+    .result-box {
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(237, 241, 234, 0.95), rgba(255, 255, 255, 0.94));
+    }
+
+    .findaible-box p,
+    .result-box p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tool-preview {
+      margin-top: 22px;
+      padding: 22px;
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 245, 241, 0.88));
+    }
+
+    .tool-preview strong {
+      display: block;
+      margin-bottom: 14px;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 28px;
+      line-height: 1.08;
+      color: var(--ink);
+    }
+
+    .tool-ui {
+      margin-top: 14px;
+      padding: 18px;
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .tool-topline,
+    .tool-chart,
+    .tool-table-row {
+      display: grid;
+      gap: 12px;
+    }
+
+    .tool-topline {
+      grid-template-columns: 1.25fr 0.85fr 0.85fr;
+      margin-bottom: 14px;
+    }
+
+    .tool-pill,
+    .tool-stat,
+    .tool-line,
+    .tool-label {
+      background: rgba(23, 23, 23, 0.06);
+    }
+
+    .tool-pill {
+      height: 42px;
+    }
+
+    .tool-stat {
+      height: 42px;
+    }
+
+    .tool-chart {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: end;
+      min-height: 150px;
+      margin-bottom: 14px;
+    }
+
+    .tool-bar {
+      position: relative;
+      min-height: 120px;
+      background: linear-gradient(180deg, rgba(23, 23, 23, 0.02), transparent 72%);
+      display: flex;
+      align-items: flex-end;
+      padding: 12px 12px 0;
+    }
+
+    .tool-bar span {
+      display: block;
+      width: 100%;
+      background: linear-gradient(180deg, rgba(171, 73, 61, 0.75), rgba(110, 125, 99, 0.86));
+    }
+
+    .tool-table-row {
+      grid-template-columns: 1.1fr 0.6fr 0.7fr 0.9fr;
+      margin-top: 10px;
+    }
+
+    .tool-label {
+      height: 16px;
+    }
+
+    .tool-line {
+      height: 12px;
+    }
+
+    .price-box {
+      padding: 26px 24px;
+      border: 1px solid rgba(132, 47, 39, 0.16);
+      background: linear-gradient(180deg, rgba(247, 236, 233, 0.82), rgba(255, 255, 255, 0.95));
+    }
+
+    .price-box .metric-label {
+      color: rgba(132, 47, 39, 0.82);
+    }
+
+    .price-number {
+      display: block;
+      margin: 8px 0 10px;
+      font-size: clamp(40px, 5vw, 58px);
+      line-height: 0.96;
+    }
+
+    .result-box {
+      margin-top: 16px;
+    }
+
+    .closing-card {
+      display: grid;
+      gap: 16px;
+      padding: 30px 32px;
+      margin-top: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(237, 241, 234, 0.76));
+    }
+
+    .report-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-card {
+      margin-top: 28px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-card,
+      .findaible-layout,
+      .sprint-layout,
+      .insight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .score-grid,
+      .phase-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .prompt-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .header-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .header-nav {
+        justify-content: flex-start;
+      }
+
+      .anchor-nav ol,
+      .score-grid,
+      .lever-grid,
+      .phase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding-bottom: 56px;
+      }
+
+      .shell {
+        width: min(calc(100% - 24px), var(--max-width));
+      }
+
+      .hero-card,
+      .section,
+      .closing-card {
+        padding: 28px 22px;
+      }
+
+      .hero h1,
+      .section-head h2,
+      .quote {
+        max-width: none;
+      }
+
+      .brand-lockup {
+        gap: 12px;
+      }
+
+      .brand-lockup img {
+        width: 102px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .cta-row {
+        display: grid;
+      }
+
+      .tool-topline,
+      .tool-table-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="brand-lockup">
+        <img src="assets/logo.png" alt="active value">
+        <div class="brand-copy">
+          <div class="eyebrow">Persoenliches GEO Opportunity Briefing</div>
+          <strong>TRIGEMA · kuratierte Executive-Perspektive</strong>
+          <span>active value in Zusammenarbeit mit findAIble</span>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Abschnittsnavigation">
+        <a href="#scores">Ausgangslage</a>
+        <a href="#hebel">Hebel</a>
+        <a href="#prozess">Sprint-Logik</a>
+        <a href="#kontakt">Naechster Schritt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell">
+      <section class="hero reveal" id="top">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <div class="section-kicker">TRIGEMA · GEO Opportunity Briefing</div>
+            <h1>TRIGEMA ist eine starke Marke. Aber KI-Systeme koennen diese Staerke noch nicht vollstaendig verwerten.</h1>
+            <div class="hero-intro">
+              <p>Die erste GEO-Diagnose zeigt eine seltene Ausgangslage: Die inhaltliche Substanz ist aussergewoehnlich stark, die maschinenlesbare Struktur dahinter jedoch noch nicht auf demselben Niveau. Genau darin liegt fuer TRIGEMA der Hebel.</p>
+              <p>Dieses Briefing verdichtet die wichtigsten Erkenntnisse aus der Erstdiagnose und uebersetzt sie in einen naechsten Schritt, der nicht bei allgemeinen Quick Wins stehen bleibt, sondern produktbezogene Sichtbarkeit messbar macht.</p>
+            </div>
+            <div class="cta-row">
+              <a class="button" href="#scores">GEO-Potenzial ansehen</a>
+              <a class="button button-secondary" href="#sprint">Naechsten Schritt verstehen</a>
+            </div>
+          </div>
+
+          <aside class="hero-aside">
+            <div class="aside-card">
+              <div class="section-kicker">Kernaussage</div>
+              <strong>Nicht die Marke ist der Engpass. Die Uebersetzung in KI-Antwortlogik ist es.</strong>
+              <p>TRIGEMA bringt Herkunft, Vertrauen, Differenzierung und relevante Inhalte bereits mit. Was heute fehlt, ist die strukturierte Verknuepfung von Marke, Produkten, Filialen und Vertrauenssignalen fuer generative Systeme.</p>
+            </div>
+            <div class="aside-card">
+              <div class="section-kicker">Warum das jetzt relevant ist</div>
+              <ul class="aside-list">
+                <li>44 Filialen sind sichtbar vorhanden, aber fuer KI noch kaum als strukturierte Standortsignale nutzbar.</li>
+                <li>Produktbezogene Antworten bleiben zu allgemein, obwohl TRIGEMA fuer viele Anfragen inhaltlich die glaubwuerdigste Marke waere.</li>
+                <li>Der groesste Erkenntnisgewinn entsteht erst ueber konkrete Produkt-Prompts, wiederholte Runs und eine messbare Baseline.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <nav class="anchor-nav reveal" aria-label="Inhaltsuebersicht">
+        <ol>
+          <li>
+            <a href="#hebel">
+              <strong>1</strong>
+              <span>Leistungen und Potenziale</span>
+            </a>
+          </li>
+          <li>
+            <a href="#prozess">
+              <strong>2</strong>
+              <span>Vom Befund zur Optimierung</span>
+            </a>
+          </li>
+          <li>
+            <a href="#findaible">
+              <strong>3</strong>
+              <span>findAIble als Messlogik</span>
+            </a>
+          </li>
+          <li>
+            <a href="#kontakt">
+              <strong>4</strong>
+              <span>3-Stunden-Sprint und Anfrage</span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+
+      <section class="section reveal" id="scores">
+        <div class="section-head">
+          <div class="section-kicker">Ausgangslage</div>
+          <h2>Hohe Markenstaerke. Niedrige maschinenlesbare Struktur.</h2>
+          <p>Die Erstdiagnose zeigt keinen Mangel an Substanz, sondern einen deutlichen Uebersetzungsbruch. TRIGEMA ist fuer Menschen sehr stark lesbar. Fuer generative Systeme ist diese Staerke noch nicht sauber genug strukturiert.</p>
+        </div>
+
+        <div class="score-grid">
+          <article class="score-card">
+            <div class="metric-label">GEO-Gesamt</div>
+            <div class="metric-value">48<span>/100</span></div>
+            <div class="metric-scale">
+              <div class="metric-bar" aria-hidden="true"><span style="width: 48%;"></span></div>
+              <small>Ausbaubar</small>
+            </div>
+          </article>
+          <article class="score-card">
+            <div class="metric-label">Brand &amp; E-E-A-T</div>
+            <div class="metric-value">72<span>/100</span></div>
+            <div class="metric-scale">
+              <div class="metric-bar" aria-hidden="true"><span style="width: 72%;"></span></div>
+              <small>Stark</small>
+            </div>
+          </article>
+          <article class="score-card">
+            <div class="metric-label">Technische GEO-Lesbarkeit</div>
+            <div class="metric-value">34<span>/100</span></div>
+            <div class="metric-scale">
+              <div class="metric-bar" aria-hidden="true"><span style="width: 34%;"></span></div>
+              <small>Unterstrukturiert</small>
+            </div>
+          </article>
+          <article class="score-card">
+            <div class="metric-label">Filial-GEO</div>
+            <div class="metric-value">28<span>/100</span></div>
+            <div class="metric-scale">
+              <div class="metric-bar" aria-hidden="true"><span style="width: 28%;"></span></div>
+              <small>Niedrig</small>
+            </div>
+          </article>
+        </div>
+
+        <div class="score-gap">
+          <strong>TRIGEMA ist inhaltlich bereits ueberzeugend. Der Abstand entsteht dort, wo KI klare Strukturen, Entitaeten und Produktsignale erwartet.</strong>
+          <p>Made in Germany, eigene Produktion, Nachhaltigkeit, Zertifizierungen, Magazin, Podcasts, Betriebsbesichtigung und 44 Filialen sind starke Signale. Sie sind nur noch nicht konsequent so verbunden, dass generative Systeme daraus praezise Antworten bauen koennen.</p>
+        </div>
+      </section>
+
+      <section class="section reveal" id="insight">
+        <div class="section-head">
+          <div class="section-kicker">Executive Insight</div>
+          <h2>Nicht die Marke ist das Problem. Die Uebersetzung in KI-Antwortlogik ist der Engpass.</h2>
+        </div>
+
+        <div class="insight-grid">
+          <p class="quote">TRIGEMA bringt fast alles mit, was generative Systeme positiv bewerten: Herkunft, Historie, Produktionstiefe, Nachhaltigkeit, Vertrauen und klare Differenzierung.</p>
+          <div class="evidence-list">
+            <div class="evidence-item"><strong>Marke und Vertrauen sind bereits stark.</strong> 105 Jahre Unternehmensgeschichte, eigene Produktion in Deutschland, OEKO-TEX, ISO 50001, Nachhaltigkeitsbericht, Stiftung und eigenstaendige Content-Formate sind fuer KI-Systeme wertvolle Vertrauenssignale.</div>
+            <div class="evidence-item"><strong>Die groessten Luecken sind strukturell.</strong> Es fehlen unter anderem 44 LocalBusiness-Schemas, ein vollstaendiges Organization-Schema, Product-Schemas fuer die wichtigsten Produkte sowie Person-Schemas fuer Wolfgang Grupp jr. und Bonita Grupp.</div>
+            <div class="evidence-item"><strong>Der naechste Erkenntnissprung ist produktbezogen.</strong> Allgemeine technische Optimierung reicht fuer einen Kunden wie TRIGEMA nicht aus. Wirklich relevant wird es, wenn fuer die wichtigsten Produkte systematisch Prompts definiert, in mehreren Runs gemessen und anschliessend optimiert werden.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="fragen">
+        <div class="section-head">
+          <div class="section-kicker">Typische KI-Fragen</div>
+          <h2>Drei Fragen, an denen sich die kuenftige Sichtbarkeit konkret entscheidet.</h2>
+          <p>Die Erstdiagnose zeigt bereits, wo TRIGEMA heute als Marke wahrgenommen wird, aber noch zu selten mit konkreten Produkten, Standorten oder Services in die Antwortebene gelangt.</p>
+        </div>
+
+        <div class="prompt-grid">
+          <article class="prompt-card">
+            <h3>Produktfrage</h3>
+            <div class="prompt-text">„Welches T-Shirt ist 100 Prozent Made in Germany und OEKO-TEX-zertifiziert?“</div>
+            <div class="state">
+              <label>Heute</label>
+              <p>TRIGEMA wird als Marke plausibel, aber oft nur allgemein genannt. Konkrete Produkte, Materialangaben oder direkte Produktverweise fehlen meist.</p>
+            </div>
+            <div class="state optimized">
+              <label>Nach Optimierung</label>
+              <p>KI kann TRIGEMA mit einem konkreten Produkt, nachvollziehbarer Herkunft, Zertifikat und passender Quelle verbinden.</p>
+            </div>
+          </article>
+
+          <article class="prompt-card">
+            <h3>Standortfrage</h3>
+            <div class="prompt-text">„Wo finde ich eine TRIGEMA-Filiale in meiner Naehe?“</div>
+            <div class="state">
+              <label>Heute</label>
+              <p>Die Marke ist bekannt, aber Standortinformationen sind fuer KI nicht sauber genug strukturiert. Antworten bleiben oft ungenau und verweisen nur allgemein auf den Store Locator.</p>
+            </div>
+            <div class="state optimized">
+              <label>Nach Optimierung</label>
+              <p>KI kann Filialen mit Adresse, Oeffnungszeiten und klarer Zuordnung zur Marke wesentlich praeziser ausgeben.</p>
+            </div>
+          </article>
+
+          <article class="prompt-card">
+            <h3>Servicefrage</h3>
+            <div class="prompt-text">„Welche Marke bietet individualisierbare Shirts aus deutscher Produktion?“</div>
+            <div class="state">
+              <label>Heute</label>
+              <p>Der Shirt-Designer ist ein starkes Differenzierungsmerkmal, wird aber ohne strukturierte Service-Logik nur unzureichend als Antwortsignal genutzt.</p>
+            </div>
+            <div class="state optimized">
+              <label>Nach Optimierung</label>
+              <p>TRIGEMA kann mit dem Shirt-Designer, Produktionsbezug und passender Quelle als konkrete Empfehlung erscheinen.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="hebel">
+        <div class="section-head">
+          <div class="section-kicker">Die groessten GEO-Hebel</div>
+          <h2>Vier Hebel, mit denen aus einer starken Marke eine besser verwertbare KI-Praesenz wird.</h2>
+        </div>
+
+        <div class="lever-grid">
+          <article class="lever-card">
+            <h3>Filialdaten strukturieren</h3>
+            <p>44 Standorte als LocalBusiness beziehungsweise ClothingStore mit Adresse, Oeffnungszeiten, Geo-Daten und Verknuepfung zur Marke. Das schliesst das groesste einzelne Defizit mit vergleichsweise klarer Umsetzungslogik.</p>
+          </article>
+          <article class="lever-card">
+            <h3>Produktdaten KI-lesbar machen</h3>
+            <p>Top-Produkte mit Product-Schema, Material, Herkunft, Zertifikaten, Bewertungen und klaren Nutzenargumenten ausstatten. So wird aus der Markenantwort eine belastbare Produktantwort.</p>
+          </article>
+          <article class="lever-card">
+            <h3>Marken- und Vertrauenssignale verbinden</h3>
+            <p>Organization-, Person- und Credential-Logik sauber verknuepfen: Historie, Produktion, Zertifikate, Personen, sameAs-Quellen und Services muessen fuer KI als zusammenhaengendes Markensystem lesbar werden.</p>
+          </article>
+          <article class="lever-card">
+            <h3>Prompt-Systematik aufbauen</h3>
+            <p>Regelmaessig messen, bei welchen Kauf- und Entscheidungsfragen TRIGEMA genannt wird, welche Wettbewerber auftauchen und welche Quellen generative Systeme fuer ihre Antworten heranziehen.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="prozess">
+        <div class="section-head">
+          <div class="section-kicker">Vom Befund zur Optimierung</div>
+          <h2>Vier Phasen von der Baseline zur messbaren Verbesserung.</h2>
+          <p>Der Report beschreibt den Zustand. Wert entsteht erst dann, wenn fuer konkrete Produktgruppen systematisch gemessen, priorisiert, optimiert und erneut verglichen wird.</p>
+        </div>
+
+        <div class="phase-grid">
+          <article class="phase-card">
+            <div class="step-index">Phase 01</div>
+            <h3>Baseline messen</h3>
+            <p>Die wichtigsten zehn Produkte oder Produktkategorien auswaehlen, relevante Prompts definieren und mehrere Runs vorbereiten, damit nicht auf Einzelbeobachtungen optimiert wird.</p>
+          </article>
+          <article class="phase-card">
+            <div class="step-index">Phase 02</div>
+            <h3>Sichtbarkeit analysieren</h3>
+            <p>Nennungen, Quellen, Wettbewerber, Argumente, Sentiment und fehlende Belege auswerten. Dadurch wird sichtbar, wo TRIGEMA heute bereits traegt und wo es noch zu generisch bleibt.</p>
+          </article>
+          <article class="phase-card">
+            <div class="step-index">Phase 03</div>
+            <h3>Daten und Content optimieren</h3>
+            <p>Produktseiten, strukturierte Daten, FAQ-Elemente, Zertifikate, Services und Standortdaten gezielt verbessern. Nicht breit, sondern dort, wo die gemessenen Fragen den groessten Hebel zeigen.</p>
+          </article>
+          <article class="phase-card">
+            <div class="step-index">Phase 04</div>
+            <h3>Re-Run und Wirkung pruefen</h3>
+            <p>Dieselben Prompts erneut laufen lassen, Veraenderungen messen und daraus die naechste Optimierungsrunde ableiten. So entsteht aus einer Vermutung ein belastbares GEO-System.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="findaible">
+        <div class="section-head">
+          <div class="section-kicker">Messlogik</div>
+          <h2>Der eigentliche Mehrwert entsteht dann, wenn Produkt-Prompts systematisch ausgespielt und die Antworten vergleichbar gemacht werden.</h2>
+        </div>
+
+        <div class="findaible-layout">
+          <div class="findaible-copy">
+            <p>Fuer einen Kunden wie TRIGEMA bleibt allgemeine Optimierung zu nah an der Oberflaeche. Wirklich aussagekraeftig wird die Arbeit erst ueber ein Set aus konkreten Produkt- und Entscheidungsfragen, die ueber mehrere Runs beobachtet werden.</p>
+            <ul>
+              <li>Welche Produkte oder Kategorien erscheinen bei spezifischen Kauf- und Vergleichsfragen bereits sichtbar in generativen Antworten?</li>
+              <li>Welche Wettbewerber werden genannt, welche Quellen bevorzugen die Systeme und welche Vertrauensargumente ziehen sie heran?</li>
+              <li>Wo fehlen strukturierte Belege, damit aus einer Markenwahrnehmung eine konkrete Produkt- oder Standortantwort wird?</li>
+            </ul>
+
+            <div class="tool-preview">
+              <div class="note-label">Abstrahierte Scorecard-Logik</div>
+              <strong>So wird aus Einzelbeobachtung ein messbarer Produktblick.</strong>
+              <p>Fuer ein Executive-Briefing ist nicht der komplette Tool-Report entscheidend, sondern die Logik dahinter: Produktgruppe, Prompt-Set, Nennung, Quellenbild und Wettbewerbsabstand werden in eine vergleichbare Sicht ueberfuehrt.</p>
+              <div class="tool-ui" aria-hidden="true">
+                <div class="tool-topline">
+                  <div class="tool-pill"></div>
+                  <div class="tool-stat"></div>
+                  <div class="tool-stat"></div>
+                </div>
+                <div class="tool-chart">
+                  <div class="tool-bar"><span style="height: 68%;"></span></div>
+                  <div class="tool-bar"><span style="height: 44%;"></span></div>
+                  <div class="tool-bar"><span style="height: 81%;"></span></div>
+                </div>
+                <div class="tool-table-row">
+                  <div class="tool-label"></div>
+                  <div class="tool-line"></div>
+                  <div class="tool-line"></div>
+                  <div class="tool-line"></div>
+                </div>
+                <div class="tool-table-row">
+                  <div class="tool-label"></div>
+                  <div class="tool-line"></div>
+                  <div class="tool-line"></div>
+                  <div class="tool-line"></div>
+                </div>
+                <div class="tool-table-row">
+                  <div class="tool-label"></div>
+                  <div class="tool-line"></div>
+                  <div class="tool-line"></div>
+                  <div class="tool-line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="findaible-box">
+            <div class="note-label">Warum das fuer TRIGEMA relevant ist</div>
+            <strong>Der naechste Schritt ist kein weiterer Report, sondern eine belastbare Prompt-Systematik fuer die wichtigsten Produkte.</strong>
+            <p>Genau hier entsteht der Unterschied zwischen einer guten Erstdiagnose und einer belastbaren Entscheidungsgrundlage: Nicht nur wissen, was fehlt, sondern fuer die relevantesten Produktgruppen messen, wie KI heute tatsaechlich antwortet.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section reveal" id="sprint">
+        <div class="section-head">
+          <div class="section-kicker">Konkreter naechster Schritt</div>
+          <h2>Vorschlag: 3-Stunden-GEO-Product-Visibility-Sprint</h2>
+          <p>In einem kompakten Arbeitsblock wird die Grundlage fuer messbare GEO-Optimierung vorbereitet. Nicht als Vollprojekt, sondern als sauberer Einstieg in die produktbezogene Sichtbarkeit.</p>
+        </div>
+
+        <div class="sprint-layout">
+          <div>
+            <ul class="sprint-points">
+              <li>Auswahl der wichtigsten zehn Produkte oder Produktkategorien als erstes Messfeld.</li>
+              <li>Entwicklung einer Prompt-Systematik je Produktgruppe und relevanter Entscheidungsfragen.</li>
+              <li>Vorbereitung erster Baseline-Runs ueber mehrere Durchlaeufe statt punktueller Einzelbeobachtung.</li>
+              <li>Definition zentraler Messwerte: Nennung, Quelle, Wettbewerber, Argumente und Tonalitaet.</li>
+              <li>Ableitung einer priorisierten Optimierungs-Roadmap fuer Produktdaten, strukturierte Signale und Inhalte.</li>
+            </ul>
+
+            <div class="result-box">
+              <div class="note-label">Ergebnis</div>
+              <strong>Eine belastbare GEO-Scorecard fuer die wichtigsten TRIGEMA-Produkte und ein konkreter Massnahmenplan fuer die naechsten Optimierungsschritte.</strong>
+              <p>Damit wird aus der Erstdiagnose ein Arbeitsmodell, an dem sich ein groesseres Mandat fachlich und prioritaer sauber aufhaengen laesst.</p>
+            </div>
+          </div>
+
+          <aside class="price-box">
+            <div class="metric-label">Einordnung</div>
+            <span class="price-number">3 Stunden</span>
+            <p class="price-meta">Kompakter Arbeitsblock zur Produkt-Prompt-Logik, Baseline-Vorbereitung und Priorisierung der sichtbarsten GEO-Hebel.</p>
+            <div class="score-gap" style="margin-top: 18px;">
+              <strong>Nicht noch ein Dokument. Sondern der erste messbare Schritt in Richtung Produkt-Visibility.</strong>
+              <p>Die vorliegende Analyse bleibt wertvoll als Statusbild. Der Sprint macht daraus eine operative Entscheidungsgrundlage.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="closing-card reveal" id="kontakt">
+        <div class="section-kicker">Abschluss</div>
+        <h3>Aus der Erstdiagnose wird ein messbares GEO-System.</h3>
+        <p>Die vorliegende Analyse zeigt den Status quo. Der naechste Schritt ist entscheidend: sichtbar machen, bei welchen konkreten Kauf- und Entscheidungsfragen TRIGEMA heute in KI-Antworten erscheint und wo Optimierung den groessten Effekt haben kann.</p>
+        <div class="cta-row">
+          <a class="button" href="mailto:anton.klees@active-value.de?subject=Terminvereinbarung%20TRIGEMA%20GEO%20Sprint">Termin mit Anton Klees vereinbaren</a>
+        </div>
+
+        <p class="report-note">Die vollstaendige Erstdiagnose liegt als Arbeitsgrundlage vor. Diese Seite verdichtet die wichtigsten Erkenntnisse und uebersetzt sie in einen konkreten naechsten Schritt.</p>
+      </section>
+
+      <footer class="footer-card reveal">
+        <span>active value GmbH · in Zusammenarbeit mit findAIble</span>
+        <span>TRIGEMA GEO Opportunity Briefing · Stand April 2026 · Vertraulich</span>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.14,
+      rootMargin: "0px 0px -40px 0px"
+    });
+
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
+</body>
+</html>
