@@ -11,7 +11,7 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <style>
     :root {
       --paper: #f3f2ee;
@@ -104,8 +104,8 @@
     .metric-label,
     .note-label {
       font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
@@ -128,12 +128,14 @@
     .result-box strong {
       font-family: "Source Serif 4", Georgia, serif;
       color: var(--ink);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.015em;
+      font-weight: 600;
     }
 
     .brand-copy strong {
       font-size: 17px;
       line-height: 1.2;
+      font-weight: 500;
     }
 
     .brand-copy span {
@@ -148,6 +150,7 @@
       justify-content: flex-end;
       font-size: 13px;
       color: var(--muted);
+      font-weight: 500;
     }
 
     .header-nav a {
@@ -194,10 +197,11 @@
     }
 
     .hero h1 {
-      font-size: clamp(40px, 5.5vw, 72px);
-      line-height: 1.01;
+      font-size: clamp(38px, 5.2vw, 66px);
+      line-height: 1.03;
       max-width: 13ch;
       margin: 12px 0 24px;
+      font-weight: 500;
     }
 
     .hero-intro {
@@ -227,7 +231,8 @@
       background: var(--ink);
       color: #fff;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
+      letter-spacing: 0.01em;
       transition: transform 180ms ease, background 180ms ease, color 180ms ease;
     }
 
@@ -270,9 +275,10 @@
       display: block;
       margin-bottom: 10px;
       font-family: "Source Serif 4", Georgia, serif;
-      font-size: 24px;
-      line-height: 1.14;
+      font-size: 22px;
+      line-height: 1.18;
       color: var(--ink);
+      font-weight: 500;
     }
 
     .aside-card p {
@@ -339,8 +345,9 @@
 
     .anchor-nav strong {
       color: var(--ink);
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1;
+      font-weight: 600;
     }
 
     .anchor-nav span {
@@ -362,9 +369,10 @@
     }
 
     .section-head h2 {
-      font-size: clamp(32px, 4vw, 46px);
-      line-height: 1.05;
+      font-size: clamp(30px, 3.8vw, 42px);
+      line-height: 1.08;
       text-wrap: balance;
+      font-weight: 500;
     }
 
     .section-head p {
@@ -391,8 +399,9 @@
     }
 
     .metric-value {
-      font-size: clamp(54px, 6vw, 68px);
-      line-height: 0.9;
+      font-size: clamp(50px, 5.5vw, 62px);
+      line-height: 0.92;
+      font-weight: 500;
     }
 
     .metric-scale {
@@ -428,15 +437,17 @@
 
     .score-gap strong {
       display: block;
-      font-size: 24px;
-      line-height: 1.14;
+      font-size: 22px;
+      line-height: 1.18;
       margin-bottom: 10px;
+      font-weight: 500;
     }
 
     .quote {
-      font-size: clamp(28px, 3.6vw, 40px);
-      line-height: 1.1;
+      font-size: clamp(26px, 3.2vw, 36px);
+      line-height: 1.14;
       max-width: 18ch;
+      font-weight: 500;
     }
 
     .insight-grid {
@@ -471,6 +482,7 @@
 
     .prompt-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
     }
 
     .prompt-card,
@@ -479,15 +491,22 @@
       padding: 24px 22px;
     }
 
+    .prompt-card {
+      display: grid;
+      gap: 0;
+      align-content: start;
+    }
+
     .prompt-card h3,
     .lever-card h3,
     .phase-card h3,
     .closing-card h3,
     .result-box strong,
     .findaible-box strong {
-      font-size: 24px;
-      line-height: 1.16;
+      font-size: 22px;
+      line-height: 1.18;
       margin-bottom: 10px;
+      font-weight: 500;
     }
 
     .prompt-text {
@@ -503,13 +522,15 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       border: 1px solid rgba(23, 23, 23, 0.08);
       background: #fff;
+      align-items: stretch;
     }
 
     .state {
       display: grid;
       gap: 8px;
       padding: 16px 16px 18px;
-      min-height: 168px;
+      min-height: 0;
+      height: 100%;
       align-content: start;
     }
 
@@ -520,7 +541,7 @@
     .state label {
       color: var(--muted);
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
@@ -528,6 +549,7 @@
     .state p {
       color: var(--text);
       font-size: 14px;
+      line-height: 1.72;
     }
 
     .state.optimized {
@@ -570,9 +592,10 @@
     .step-index {
       color: rgba(132, 47, 39, 0.78);
       font-family: "Source Serif 4", Georgia, serif;
-      font-size: 42px;
-      line-height: 0.9;
-      letter-spacing: -0.03em;
+      font-size: 38px;
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      font-weight: 500;
     }
 
     .findaible-layout,
@@ -633,9 +656,10 @@
       display: block;
       margin-bottom: 14px;
       font-family: "Source Serif 4", Georgia, serif;
-      font-size: 28px;
-      line-height: 1.08;
+      font-size: 24px;
+      line-height: 1.16;
       color: var(--ink);
+      font-weight: 500;
     }
 
     .tool-ui {
@@ -720,8 +744,9 @@
     .price-number {
       display: block;
       margin: 8px 0 10px;
-      font-size: clamp(40px, 5vw, 58px);
-      line-height: 0.96;
+      font-size: clamp(38px, 4.6vw, 52px);
+      line-height: 0.98;
+      font-weight: 500;
     }
 
     .result-box {
