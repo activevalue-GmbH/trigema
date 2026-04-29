@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRIGEMA GEO Opportunity Briefing | active value</title>
+  <title>TRIGEMA GEO Highlight Analyse | active value</title>
   <meta
     name="description"
-    content="Kuratiertes GEO Opportunity Briefing für TRIGEMA mit zentralen Erkenntnissen aus der Erstdiagnose und einem konkreten nächsten Schritt für produktbezogene Sichtbarkeitsmessung."
+    content="Kuratiertes GEO Highlight Analyse Briefing für TRIGEMA mit zentralen Erkenntnissen aus der Erstdiagnose und einem konkreten nächsten Schritt für produktbezogene Sichtbarkeitsmessung."
   >
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,14 +77,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 24px;
       padding: 18px 0;
     }
 
     .brand-lockup {
       display: flex;
-      align-items: center;
-      gap: 16px;
+      align-items: flex-end;
+      gap: 18px;
     }
 
     .brand-lockup img {
@@ -92,9 +92,15 @@
       height: auto;
     }
 
+    .trigema-logo {
+      width: 170px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
     .brand-copy {
       display: grid;
-      gap: 4px;
+      gap: 6px;
     }
 
     .eyebrow,
@@ -132,38 +138,37 @@
       font-weight: 600;
     }
 
-    .brand-copy strong {
-      font-size: 17px;
-      line-height: 1.2;
-      font-weight: 500;
-    }
-
     .brand-copy span {
       color: var(--muted);
       font-size: 13px;
     }
 
-    .header-nav {
+    .header-summary {
       display: flex;
-      gap: 14px;
+      gap: 18px;
       flex-wrap: wrap;
       justify-content: flex-end;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
       font-weight: 500;
     }
 
-    .header-nav a {
-      padding-bottom: 2px;
-      border-bottom: 1px solid transparent;
-      transition: border-color 180ms ease, color 180ms ease;
+    .header-summary span {
+      position: relative;
+      padding-left: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
-    .header-nav a:hover,
-    .header-nav a:focus-visible {
-      color: var(--ink);
-      border-color: rgba(23, 23, 23, 0.3);
-      outline: none;
+    .header-summary span::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(79, 93, 71, 0.55);
     }
 
     main {
@@ -489,12 +494,14 @@
     .lever-card,
     .phase-card {
       padding: 24px 22px;
+      min-width: 0;
     }
 
     .prompt-card {
       display: grid;
       gap: 0;
       align-content: start;
+      overflow: hidden;
     }
 
     .prompt-card h3,
@@ -515,6 +522,8 @@
       color: var(--ink);
       font-size: 15px;
       margin-bottom: 18px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .state-grid {
@@ -523,6 +532,7 @@
       border: 1px solid rgba(23, 23, 23, 0.08);
       background: #fff;
       align-items: stretch;
+      min-width: 0;
     }
 
     .state {
@@ -532,6 +542,8 @@
       min-height: 0;
       height: 100%;
       align-content: start;
+      min-width: 0;
+      overflow: hidden;
     }
 
     .state + .state {
@@ -550,6 +562,9 @@
       color: var(--text);
       font-size: 14px;
       line-height: 1.72;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      hyphens: auto;
     }
 
     .state.optimized {
@@ -594,6 +609,8 @@
       padding: 24px 22px;
       border: 1px solid rgba(23, 23, 23, 0.08);
       background: rgba(255, 255, 255, 0.94);
+      min-width: 0;
+      overflow: hidden;
     }
 
     .pressure-card.highlight,
@@ -610,6 +627,7 @@
       color: var(--ink);
       font-weight: 500;
       margin-bottom: 10px;
+      overflow-wrap: anywhere;
     }
 
     .lever-card p,
@@ -621,6 +639,9 @@
     .benefit-card p {
       color: var(--muted);
       font-size: 15px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      hyphens: auto;
     }
 
     .transition-copy {
@@ -870,6 +891,29 @@
       transform: translateY(0);
     }
 
+    @media (max-width: 1280px) {
+      .hero-card {
+        grid-template-columns: minmax(0, 1.34fr) minmax(300px, 0.66fr);
+        gap: 34px;
+        padding: 48px 34px 46px;
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 4.7vw, 56px);
+        line-height: 1.04;
+        max-width: 14.5ch;
+      }
+
+      .hero-intro {
+        max-width: 58ch;
+      }
+
+      .aside-card strong {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+    }
+
     @media (max-width: 1080px) {
       .hero-card,
       .findaible-layout,
@@ -908,7 +952,7 @@
         flex-direction: column;
       }
 
-      .header-nav {
+      .header-summary {
         justify-content: flex-start;
       }
 
@@ -986,10 +1030,16 @@
 
       .brand-lockup {
         gap: 12px;
+        align-items: flex-start;
+        flex-wrap: wrap;
       }
 
       .brand-lockup img {
-        width: 102px;
+        width: 96px;
+      }
+
+      .trigema-logo {
+        width: 142px;
       }
 
       .button {
@@ -1012,18 +1062,16 @@
     <div class="shell header-row">
       <div class="brand-lockup">
         <img src="assets/logo.png" alt="active value">
+        <img class="trigema-logo" src="assets/trigema-logo.svg" alt="TRIGEMA">
         <div class="brand-copy">
-          <div class="eyebrow">Persönliches GEO Opportunity Briefing</div>
-          <strong>TRIGEMA · kuratierte Executive-Perspektive</strong>
+          <div class="eyebrow">GEO Highlight Analyse</div>
           <span>active value in Zusammenarbeit mit findAIble</span>
         </div>
       </div>
-      <nav class="header-nav" aria-label="Abschnittsnavigation">
-        <a href="#scores">Ausgangslage</a>
-        <a href="#hebel">Hebel</a>
-        <a href="#prozess">Sprint-Logik</a>
-        <a href="#kontakt">Nächster Schritt</a>
-      </nav>
+      <div class="header-summary" aria-label="Seitenkontext">
+        <span>GEO Analyse Highlights</span>
+        <span>Next Step</span>
+      </div>
     </div>
   </header>
 
@@ -1032,7 +1080,7 @@
       <section class="hero reveal" id="top">
         <div class="hero-card">
           <div class="hero-copy">
-            <div class="section-kicker">TRIGEMA · GEO Opportunity Briefing</div>
+            <div class="section-kicker">TRIGEMA · GEO Highlight Analyse</div>
             <h1>TRIGEMA ist eine starke Marke. Aber KI-Systeme können diese Stärke noch nicht vollständig verwerten.</h1>
             <div class="hero-intro">
               <p>Die erste GEO-Diagnose zeigt eine seltene Ausgangslage: Die inhaltliche Substanz ist außergewöhnlich stark, die maschinenlesbare Struktur dahinter jedoch noch nicht auf demselben Niveau. Genau darin liegt für TRIGEMA der Hebel.</p>
@@ -1389,7 +1437,7 @@
 
       <footer class="footer-card reveal">
         <span>active value GmbH · in Zusammenarbeit mit findAIble</span>
-        <span>TRIGEMA GEO Opportunity Briefing · Stand April 2026 · Vertraulich</span>
+        <span>TRIGEMA GEO Highlight Analyse · Stand April 2026 · Vertraulich</span>
       </footer>
     </div>
   </main>
