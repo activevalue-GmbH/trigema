@@ -1,6 +1,6 @@
 # TRIGEMA GEO Opportunity Briefing
 
-Statische Executive-Landingpage fuer ein persoenliches GEO-Briefing nach dem Erstcheck.
+Statische Executive-Landingpage für ein persönliches GEO-Briefing nach dem Erstcheck.
 
 ## Dateien
 
@@ -23,17 +23,17 @@ Die Seite ist bewusst **kein Audit-Report**. Sie ist als kuratiertes Akquise-Bri
 1. Ausgangslage und Score-Gap
 2. Einordnung der eigentlichen GEO-Hebel
 3. produktbezogene Prompt- und Messlogik
-4. klarer naechster Schritt ueber einen 3-Stunden-Sprint
+4. klarer nächster Schritt über einen 3-Stunden-Sprint
 
 ## Technische Hinweise
 
 - Keine Build-Tools, keine Frameworks
-- GitHub-Pages-faehig
+- GitHub-Pages-fähig
 - `meta robots="noindex, nofollow"` ist gesetzt
 - Scroll-Reveal ist mit wenig Vanilla-JS umgesetzt
 
-## Naechste sinnvolle Schritte
+## Nächste sinnvolle Schritte
 
 - finalen Kontakt-CTA festlegen
 - optional echten findAIble-Screenshot statt abstrahierter Tool-Vorschau einsetzen
-- finale Tonalitaet und inhaltliche Zuspitzung vor Versand pruefen
+- finale Tonalität und inhaltliche Zuspitzung vor Versand prüfen
