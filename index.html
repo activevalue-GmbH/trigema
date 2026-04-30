@@ -863,6 +863,49 @@
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(237, 241, 234, 0.76));
     }
 
+    .contact-block {
+      display: grid;
+      gap: 8px;
+      max-width: 420px;
+      margin-top: 10px;
+      padding: 18px 20px;
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .contact-block strong {
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.3;
+    }
+
+    .contact-email {
+      color: var(--text);
+      font-size: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .copy-button {
+      justify-self: start;
+      margin-top: 8px;
+      padding: 9px 12px;
+      border: 1px solid rgba(23, 23, 23, 0.14);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .copy-button:hover,
+    .copy-button:focus-visible {
+      border-color: rgba(23, 23, 23, 0.32);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
     .report-note {
       margin-top: 18px;
       color: var(--muted);
@@ -1043,6 +1086,10 @@
       }
 
       .button {
+        width: 100%;
+      }
+
+      .copy-button {
         width: 100%;
       }
 
@@ -1425,11 +1472,15 @@
 
       <section class="closing-card reveal" id="kontakt">
         <div class="section-kicker">Abschluss</div>
-        <h3>Lassen Sie uns die Erstdiagnose in ein konkretes GEO-Startpaket übersetzen.</h3>
-        <p>In einem gemeinsamen Termin zeigen wir, welche Detaildaten bereits aus der Analyse ableitbar sind, welche Prompt-Runs als nächstes sinnvoll sind und wie ein Startpaket für TRIGEMA aufgebaut werden kann.</p>
+        <h3>GEO-Startpaket mit Anton Klees abstimmen</h3>
+        <p>Für die Vertiefung der Analyse und die Abstimmung eines möglichen GEO-Startpakets steht Anton Klees als Ansprechpartner zur Verfügung.</p>
         <div class="cta-actions">
-          <a class="button" href="mailto:anton.klees@active-value.de?subject=GEO-Termin%20abstimmen%20TRIGEMA">GEO-Termin abstimmen</a>
-          <a class="button button-secondary" href="mailto:anton.klees@active-value.de?subject=Startpaket%20besprechen%20TRIGEMA">Startpaket besprechen</a>
+          <a class="button" href="#kontakt">Kontakt mit Anton Klees aufnehmen</a>
+        </div>
+        <div class="contact-block" aria-label="Kontakt Anton Klees">
+          <strong>Anton Klees</strong>
+          <span class="contact-email" id="anton-email">anton.klees@active-value.de</span>
+          <button class="copy-button" type="button" data-copy-email="anton.klees@active-value.de">E-Mail-Adresse kopieren</button>
         </div>
 
         <p class="report-note">Die vollständige Erstdiagnose liegt als Arbeitsgrundlage vor. Diese Seite verdichtet die wichtigsten Erkenntnisse und übersetzt sie in einen konkreten nächsten Schritt.</p>
@@ -1457,6 +1508,23 @@
     });
 
     revealItems.forEach((item) => observer.observe(item));
+
+    document.querySelectorAll("[data-copy-email]").forEach((button) => {
+      const originalLabel = button.textContent;
+      const email = button.dataset.copyEmail;
+
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(email);
+          button.textContent = "E-Mail-Adresse kopiert";
+          window.setTimeout(() => {
+            button.textContent = originalLabel;
+          }, 2200);
+        } catch (error) {
+          button.textContent = email;
+        }
+      });
+    });
   </script>
 </body>
 </html>
